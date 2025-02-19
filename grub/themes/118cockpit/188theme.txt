@@ -1,0 +1,23 @@
+# GRUB2 188Cockpit Theme (By myself yayyyyy).
+
+desktop-image: "catB2.png"
+terminal-box: "terminal_box_*.png"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+terminal-border: "0"
+
+# Boot menu
++ boot_menu {
+  left = 70%
+  top = 37%
+  width = 34%
+  height = 27%
+  item_font = "/boot/grub/fonts/unicode.pf2"
+  item_color = "#ffffff"
+  selected_item_color = "#e6d38a"
+  item_spacing = 0
+  icon_width = 0
+  item_icon_space = 0
+}

@@ -1,0 +1,18 @@
+
+grub.cfg # To ignore the fucking generated grub.cfg
+.oh-my-zsh
+
+# Common files to ignore
+.bash_history
+.zsh_history
+*.swp  # Vim swap files
+*~     # Backup files
+.cache  # Cache directories
+.local/share/Trash/*  # Trash
+.thumbnails  # Thumbnails
+.mozilla  # Firefox profiles (can be large and sensitive)
+.config/google-chrome # Chrome profiles (can be large and sensitive)
+.config/chromium # Chromium profiles (can be large and sensitive)
+.gnupg # GPG keys (very sensitive!)
+.ssh # SSH keys (very sensitive!)
+.git # You probably don't want to version control your git repo within your git repo (if you went with the less recommended option 1).

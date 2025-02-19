@@ -1,0 +1,238 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "battery",
+    "network",
+    "bluetooth",
+    "wireplumber"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "cpu",
+    "hyprland/language",
+    "custom/keyboard",
+    "clock"
+  ],
+  "cpu": {
+    "format-alt": "  {}%",
+    "format": "{icon0}{icon1}{icon2}{icon3}",
+    "interval": 4,
+    "format-icons": [
+      "▏",
+      "▎",
+      "▍",
+      "▌",
+      "▋",
+      "▊",
+      "█",
+      "█"
+    ]
+  },
+  "battery": {
+    "format": "{icon}",
+    "format-alt": "󱊢{capacity}%",
+    "format-charging": "<span color=\"#15a8ad\">{icon}</span>", //{capacity}%
+    "tooltip": true,
+    "icon-padding": 2,
+    "format-icons": [
+      "<span color=\"#610000\">▏</span>", //
+      "<span color=\"#610000\">▎</span>", //
+      "▍", //
+      "▌", //
+      "▋", //
+      "▊", //
+      "█", //Last full
+      "<span color=\"#000000\">█▏</span>",
+      "<span color=\"#000000\">█▎</span>",
+      "<span color=\"#000000\">█▍</span>",
+      "<span color=\"#000000\">█▌</span>",
+      "<span color=\"#000000\">█▋</span>",
+      "<span color=\"#000000\">█▊</span>",
+      "<span color=\"#000000\">██</span>"
+    ],
+    "threshold": {
+      "low": 20, // Below 20% uses the first icon in `format-icons`.
+      "full": 100, // Above 90% uses the last icon in `format-icons`.
+      "charging": 90 // Above 90% while charging uses the last icon in `format-charge-icons`.
+    }
+  },
+  "clock": {
+    "format": "{:L%R}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "tooltip": true,
+    "calendar": {
+      "mode-mon-col": 7, // Standard 7 days a week
+      "format": {
+        "months": "<span color='#ffffff'><b>{}</b></span>", //#928374
+        "weekdays": "<span color='#ffffff'><b>{}</b></span>", //#7c6f64
+        "today": "<span color='#ffffff' background='#928374'><b>{}</b></span>" //#1b1b1b
+      }
+    }
+  },
+  "hyprland/workspaces": {
+    "font-size": 24,
+    "on-click": "activate",
+    // "format": "<span font-size=\"large\">| {icon} {windows}|</span>", // yes the spaces are uneven on either side. But it looks better that way. 
+    "format": "<span font-size=\"large\">{icon} {windows}</span>",
+    // "format": "<span font=\"JetBrainsMono Nerd Font Mono\" size=\"20000\">| {icon} {windows} |</span>",
+    "window-rewrite-default": "",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+      // "urgent": "",
+      // "active": "",
+      // "default": ""
+    },
+    "sort-by-number": true,
+    "window-rewrite": {
+      "class<.*dolphin.*>": "󱢴 ",
+      "class<thunar>": " ",
+      "title<.*youtube.*>": " ",
+      "title<.*whatsapp.*>": " ", //
+      "title<.*teams.*>": "󰊻 ",
+      "title<.*facebook.*>": " ",
+      "class<firefox>": "󰈹 ", //󰈹  
+      "title<.*github.*>": " ",
+      "class<github desktop>": " ",
+      "class<org.wezfurlong.wezterm>": " ",
+      "class<Alacritty>": " ",
+      "class<obsidian>": "󰠮 ",
+      "class<.*zathura.*>": " ",
+      "title<.*nvim ~.*>": " ", //
+      "title<.*vim.*>": " ", //" ", //" ",
+      "title<.*nvim.*>": " ", //"",
+      "class<spotify>": " ",
+      "class<chromium>": " ",
+      "class<discord>": " ",
+      "class<vesktop": " ",
+      "class<vlc>": "󰕼 ",
+      "class<mpv>": " ",
+      "class<qimgv>": " ",
+      "class<gimp>": " ",
+      "class<krita>": " ",
+      "title<.*gmail.*>": "󰊫 ",
+      "class<virt-manager>": " ",
+      "class<wireshark>:": "󱙳 ",
+      "class<obs>": " ",
+      "class<steam>": " ",
+      "class<tor browser>": " ",
+      "class<bluetooth manager>": " ",
+      "class<.*libreOffice impress.*>": "󰏆 ",
+      "class<.*libreOffice writer.*>": "󰏆 ",
+      "class<qbittorrent>": "󰽺 ",
+      "class<kate>": "󱞁 "
+    }
+  },
+  "bluetooth": {
+    "format": "{icon}",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "~/.config/waybar/scripts/bluetoothctl_power_toggle.sh",
+    "on-click-right": "blueman-manager",
+    "format-icons": {
+      "on": " ⭘ ",
+      "off": "<span color=\"#2E3436\"> ⏽ </span>"
+    }
+  },
+  "network": { //"interface": "wlan0",
+    "format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-alt": "{icon} {essid} [󰾆 {bandwidthTotalBytes}]",
+    "format-ethernet": "[󰾆 {bandwidthTotalBytes}]",
+    "format-disconnected": "󰌙 Disconnected ⚠ ",
+    "tooltip-format": "{ifname} via {gwaddr}  ",
+    "tooltip-format-wifi": "{frequency} MHz ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ipaddr}/{cidr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "tooltip-format-disconnected": "Disconnected ⚠ ",
+    "max-length": 50,
+    "format-icons": [
+      "󰤯 ",
+      "󰤟 ",
+      "󰤢 ",
+      "󰤢 ",
+      "󰤨 "
+    ]
+  },
+  "wireplumber": {
+    "format": "{icon}",
+    "format-alt": " {volume}%",
+    "tooltip": true,
+    "tooltip-format": "{volume%}",
+    "scroll-step": 2,
+    "format-muted": "<span color=\"#2E3436\">{icon}</span>",
+    "format-icons": {
+      "headphone": " ",
+      "default": [
+        " ",
+        // "▏", //
+        // "▎", //
+        // "▍", //
+        "▌", //
+        // "▋", //
+        "▊", //
+        // "█", //Last full
+        "█▏",
+        // "█▎",
+        "█▍",
+        // "█▌",
+        "█▋",
+        // "█▊",
+        "██", //2nd full
+        // "██▏",
+        "██▎",
+        // "██▍",
+        "██▌",
+        // "██▋",
+        "██▊",
+        // "███", //3rd full
+        "███▏",
+        // "███▎",
+        "███▍",
+        // "███▌",
+        "███▋",
+        // "███▊",
+        "████", // 4th full
+        // "████▏",
+        "████▎",
+        // "████▍",
+        "████▌",
+        // "████▋",
+        "████▊",
+        // "█████", //5th full
+        "█████▍",
+        // "█████▌",
+        "█████▋",
+        // "█████▊"
+        "██████"
+      ]
+    }
+  }, //
+  // "custom/keyboard": {
+  //   "exec": "~/.config/waybar/scripts/layout_display.sh",
+  //   "format": " ",
+  //   "format-alt": "{}"
+  // },
+  "hyprland/language": {
+    "format": "<span size = \"large\"> </span>",
+    "format-alt": "{}"
+    // "format-us": "English (US)",
+    // "format-uk": "English (UK)",
+    // "format-jp": "日本語",
+    // "format-no": "Norsk Bokmål"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  }
+}
