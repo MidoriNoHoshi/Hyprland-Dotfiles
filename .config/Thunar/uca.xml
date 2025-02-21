@@ -5,11 +5,24 @@
 	<name>Open Terminal Here</name>
 	<submenu></submenu>
 	<unique-id>1737293363625648-1</unique-id>
-	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
-	<description>Example for a custom action</description>
+  <!-- <command>exo-open --working-directory %f --launch TerminalEmulator</command> -->
+  <command>alacritty --working-directory %f</command>
+  <!-- <description>Example for a custom action</description> -->
+  <description>Nyeh</description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
-</action>
+  </action>
+  <!-- <action> -->
+  <!--   <icon>user-trash</icon> -->
+  <!--   <name>Hide Trash</name> -->
+  <!--   <command>echo "Trash hidden"</command> -->
+  <!--   <description>Hide the Trash entry</description> -->
+  <!--   <patterns>*</patterns> -->
+  <!--   <directories/> -->
+  <!--   <hide-menus> -->
+  <!--     <menuitem>Trash</menuitem> -->
+  <!--   </hide-menus> -->
+  <!-- </action> -->
 </actions>

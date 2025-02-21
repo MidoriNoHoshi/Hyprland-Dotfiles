@@ -1,6 +1,9 @@
 # Hyprland-Dotfiles
 
 My current dotfiles 19.02.2025 for arch linux.
+Waybar configuration is heavily inspired by vDawgGolden's waybar. . . The Workspaces module is basically identical.
+
+GRUB bakeneko pixelart is by @nico_n_art. Crest in top left corner and on nvim dashboard: 大阪天満宮 家紋
 
 ## GRUB Configuration
 

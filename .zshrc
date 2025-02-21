@@ -4,11 +4,14 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="fino"
+# ZSH_THEME="fino-time"
+# ZSH_THEME="gallifrey"
+ZSH_THEME="wedisagree"
+# Honestly, the perfect theme for me would have been "wedisagree" but with full path displayed. Fuck. Gallifrey was pretty good to ngl.
+
+source ~/.config/lf/lfcd.sh
+alias lf="lfcd"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
