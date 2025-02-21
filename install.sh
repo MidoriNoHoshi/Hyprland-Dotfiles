@@ -9,6 +9,10 @@ if [[ $UID -ne 0 ]]; then
   exit 1
 fi
 
+# Copying over the Hyprland loading backgrounds to /usr/share/hypr/
+rm -r /usr/share/hypr/
+mv -r $PWD/hypr /usr/share/hypr
+
 #Copying GRUB theme
 cp -r $PWD/grub/themes/118cockpit/ /boot/grub/themes/
 cp -r $PWD/grub/fonts/ /boot/grub/fonts/

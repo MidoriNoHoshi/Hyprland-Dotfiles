@@ -1,6 +1,7 @@
 
 grub.cfg # To ignore the fucking generated grub.cfg
 .oh-my-zsh
+.config/mozc # Don't want to commit my japanese dictionary.
 
 # Common files to ignore
 .bash_history
