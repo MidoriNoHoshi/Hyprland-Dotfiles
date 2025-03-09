@@ -19,6 +19,9 @@ cp -r $PWD/grub/fonts/ /boot/grub/fonts/
 
 echo "GRUB configuration: Run 'sudo grub-mkconfig -o /boot/grub/grub.cfg' to generate grub.cfg"
 
+# Moving keyd confirguration to /etc/keyd/default.conf
+mv -r $PWD/keyd/ /etc/
+
 #Install packages
 msg_info "Installing packages: grub, hyprland, waybar, dunst, rofi, fcitx5, alacritty, fcitx5-configtool, nvim, neofetch, thunar, mozc. . . "
 packages=(
@@ -36,6 +39,7 @@ packages=(
   mozc
   xfce4
   zsh
+  keyd
 )
 
 for a in "${packages[@]}"; do
